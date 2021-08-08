@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button} from './Button.js';
+import { Button } from './Button.js';
 
 export class Random extends React.Component {
   constructor(props) {
     super(props);
     this.state = { color: [3, 10, 200] }
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -37,6 +38,10 @@ export class Random extends React.Component {
       random.push(Math.floor(Math.random() * 256));
     }
     return random;
+  }
+
+  handleClick() {
+    this.setState({ color: this.chooseColor() })
   }
 
   render() {
