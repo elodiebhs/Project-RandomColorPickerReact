@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Random extends React.Component {
+export class Random extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { color: [3, 10, 200] }
+  }
+
+
   componentDidMount() {
     this.applyColor();
   }
@@ -16,7 +22,7 @@ class Random extends React.Component {
 
   isLight() {
     const rgb = this.state.color;
-    return rgb.reduce((a,b) => a+b) < 127 * 3;
+    return rgb.reduce((a, b) => a + b) < 127 * 3;
   }
 
   applyColor() {
@@ -27,7 +33,7 @@ class Random extends React.Component {
   chooseColor() {
     const random = [];
     for (let i = 0; i < 3; i++) {
-      random.push(Math.floor(Math.random()*256));
+      random.push(Math.floor(Math.random() * 256));
     }
     return random;
   }
@@ -44,6 +50,6 @@ class Random extends React.Component {
 }
 
 ReactDOM.render(
-  <Random />, 
+  <Random />,
   document.getElementById('app')
 );
