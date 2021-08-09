@@ -1,6 +1,7 @@
 
 import './App.css';
-import {Random} from'./Random';
+import {Random} from'./components/Random.js';
+
 
 function App() {
   return (

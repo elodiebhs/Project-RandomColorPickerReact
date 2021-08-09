@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from './Button.js';
+import { Button } from '../components/Button.js';
 
 export class Random extends React.Component {
   constructor(props) {
